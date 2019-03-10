@@ -247,6 +247,7 @@ try:
         def __init__(self, app, options=None):
             self.options = options or {}
             self.application = app
+            self.options['bind'] = os.environ.get('DASHBOARD_BIND')
             super(GunicornBrozzlerDashboard, self).__init__()
 
         def load_config(self):
